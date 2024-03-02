@@ -1,0 +1,869 @@
+@media (min-width: 1200px) {
+  body {
+    max-width: 1500px;
+    font-family: "SUITE Variable", sans-serif;
+    margin: 0 auto;
+    padding: 30px;
+    height: 1028px;
+  }
+  body .blind {
+    display: none;
+  }
+  body header {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  body header h1 {
+    display: none;
+  }
+  body header .manageBtn {
+    position: relative;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #576EF2;
+    background-color: #fff;
+    border-radius: 10px;
+    background: url("../Imgs/managementIcon.png") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  body header .manageBtn:hover {
+    background-color: #C9D3F2;
+  }
+  body .wrapper {
+    display: flex;
+  }
+  body .wrapper .visualArea {
+    width: 100%;
+  }
+  body .wrapper .visualArea > section.datetimeArea {
+    margin-bottom: 14px;
+    font-size: 58px;
+  }
+  body .wrapper .visualArea > section.datetimeArea .dateArea .localArea {
+    position: relative;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0 10px 26px;
+  }
+  body .wrapper .visualArea > section.datetimeArea .dateArea .localArea:after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -26px;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    background: url("../Imgs/fluent_location-16-filled.png") no-repeat center;
+    background-size: cover;
+  }
+  body .wrapper .visualArea > section.weatherStatusArea {
+    position: relative;
+    float: left;
+    width: calc(50% - 7.5px);
+    height: 290px;
+    font-size: 30px;
+    font-weight: 0;
+    padding: 25px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea > section.weatherStatusArea > dl .weatherConditionWrap {
+    position: relative;
+  }
+  body .wrapper .visualArea > section.weatherStatusArea > dl .weatherConditionWrap .weatherConditionArea {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #C9D3F2;
+    top: 50%;
+    background: url("../Imgs/fluent_weather-sunny-48-regular.png") no-repeat center;
+  }
+  body .wrapper .visualArea > section.weatherStatusArea > dl .weatherCelWrap {
+    position: absolute;
+    width: auto;
+    bottom: 20px;
+    right: 20px;
+  }
+  body .wrapper .visualArea > section.weatherStatusArea > dl .weatherCelWrap .weatherCelArea {
+    font-size: 90px;
+    letter-spacing: -8px;
+  }
+  body .wrapper .visualArea > section.dustArea {
+    margin-left: 15px;
+    float: left;
+    width: calc(50% - 7.5px);
+    position: relative;
+    height: 290px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea > section.dustArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea > section.dustArea > div {
+    float: left;
+  }
+  body .wrapper .visualArea > section.dustArea > div > dl {
+    margin-top: 100px;
+    text-align: center;
+  }
+  body .wrapper .visualArea .windWrap {
+    clear: both;
+    float: left;
+    width: calc(50% - 7.5px);
+    height: 30%;
+    display: flex;
+    margin-top: 23px;
+    height: 246px;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea {
+    position: relative;
+    width: calc(50% - 8px);
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+    margin-right: 16px;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea .windDirImg {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../Imgs/fluent-mdl2_wind-direction.png") no-repeat center;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea > dl {
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea > dl > dd {
+    min-width: 65px;
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea {
+    position: relative;
+    width: calc(50% - 8px);
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea .windSpeedImg {
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../Imgs/material-symbols-light_mode-fan-outline.png") no-repeat center;
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea > dl {
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+  }
+  body .wrapper .visualArea .humidityWrap {
+    width: calc(50% - 7.5px);
+    height: 246px;
+    float: left;
+    margin-left: 15px;
+    position: relative;
+    margin-top: 23px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea .humidityWrap > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .humidityWrap .pptnWrap {
+    position: absolute;
+    width: 153px;
+    height: 153px;
+    padding-top: 96px;
+    top: 50%;
+    left: 25%;
+    text-align: center;
+    color: #576EF2;
+    transform: translate(-50%, -50%);
+  }
+  body .wrapper .visualArea .humidityWrap .pptnWrap .pptnTitle {
+    font-size: 20px;
+  }
+  body .wrapper .visualArea .humidityWrap .pptnWrap .pptnValue {
+    margin-top: 15px;
+    font-size: 32px;
+  }
+  body .wrapper .visualArea .humidityWrap .rhWrap {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    color: #576EF2;
+    transform: translate(-50%, -50%);
+    width: 153px;
+    height: 153px;
+    background: url("../Imgs/VectorWater.png") no-repeat center;
+  }
+  body .wrapper .visualArea .humidityWrap .rhWrap .rhTitle {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+  }
+  body .wrapper .visualArea .humidityWrap .rhWrap .rhValue {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+  }
+  body .wrapper .visualArea .livingIndexWrap {
+    width: 100%;
+    position: relative;
+    clear: both;
+    float: left;
+    margin-top: 23px;
+    display: flex;
+    justify-content: space-between;
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea {
+    position: relative;
+    width: 30%;
+    height: 268px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea > dl {
+    position: absolute;
+    top: 77px;
+    left: 41px;
+    width: 80px;
+    height: 80px;
+    float: left;
+    text-align: center;
+    line-height: 78px;
+    border: 1px solid #576EF2;
+    border-radius: 10px;
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea > p {
+    position: absolute;
+    width: 225px;
+    top: 55%;
+    left: 60%;
+    transform: translateX(-50%);
+    font-size: 20px;
+  }
+}
+@media (min-width: 800.1px) and (max-width: 1199.99px) {
+  body {
+    font-family: "SUITE Variable", sans-serif;
+    margin: 0 auto;
+    padding: 30px;
+    height: 1028px;
+  }
+  body .blind {
+    display: none;
+  }
+  body header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  body header h1 {
+    display: none;
+  }
+  body header .manageBtn {
+    position: relative;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    border: none;
+    background-color: #fff;
+    border-radius: 10px;
+    background: url("../Imgs/managementIcon.png") no-repeat center;
+    background-size: cover;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  body header .manageBtn:hover {
+    scale: 1.05;
+  }
+  body .wrapper .visualArea > section.datetimeArea {
+    margin-bottom: 14px;
+    font-size: 58px;
+  }
+  body .wrapper .visualArea > section.datetimeArea .dateArea .localArea {
+    position: relative;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0 10px 26px;
+  }
+  body .wrapper .visualArea > section.datetimeArea .dateArea .localArea:after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -26px;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    background: url("../Imgs/fluent_location-16-filled.png") no-repeat center;
+    background-size: cover;
+  }
+  body .wrapper .visualArea > section.weatherStatusArea {
+    position: relative;
+    float: left;
+    width: calc(50% - 7.5px);
+    height: 290px;
+    font-size: 30px;
+    font-weight: 0;
+    padding: 25px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea > section.weatherStatusArea > dl .weatherConditionWrap {
+    position: relative;
+  }
+  body .wrapper .visualArea > section.weatherStatusArea > dl .weatherConditionWrap .weatherConditionArea {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #C9D3F2;
+    top: 50%;
+    background: url("../Imgs/fluent_weather-sunny-48-regular.png") no-repeat center;
+  }
+  body .wrapper .visualArea > section.weatherStatusArea > dl .weatherCelWrap {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    letter-spacing: -4px;
+    margin-bottom: 12px;
+  }
+  body .wrapper .visualArea > section.weatherStatusArea > dl .weatherCelWrap .weatherCelArea {
+    margin-left: 40%;
+    text-align: center;
+    font-size: 82px;
+  }
+  body .wrapper .visualArea > section.dustArea {
+    margin-left: 15px;
+    float: left;
+    width: calc(50% - 7.5px);
+    position: relative;
+    height: 290px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea > section.dustArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea > section.dustArea > div {
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 280px;
+  }
+  body .wrapper .visualArea > section.dustArea > div.fineDustArea {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+  }
+  body .wrapper .visualArea > section.dustArea > div.ultraFineDustArea {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+  }
+  body .wrapper .visualArea > section.dustArea > div > dl {
+    margin-top: 100px;
+    text-align: center;
+  }
+  body .wrapper .visualArea .windWrap {
+    clear: both;
+    float: left;
+    width: calc(50% - 7.5px);
+    height: 30%;
+    display: flex;
+    margin-top: 23px;
+    height: 246px;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea {
+    position: relative;
+    width: calc(50% - 8px);
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+    margin-right: 16px;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea .windDirImg {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../Imgs/fluent-mdl2_wind-direction.png") no-repeat center;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea > dl {
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea > dl > dd {
+    min-width: 65px;
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea {
+    position: relative;
+    width: calc(50% - 8px);
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea .windSpeedImg {
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../Imgs/material-symbols-light_mode-fan-outline.png") no-repeat center;
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea > dl {
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+  }
+  body .wrapper .visualArea .humidityWrap {
+    width: calc(50% - 7.5px);
+    height: 246px;
+    float: left;
+    margin-left: 15px;
+    position: relative;
+    margin-top: 23px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea .humidityWrap > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .humidityWrap .pptnWrap {
+    position: absolute;
+    width: 153px;
+    height: 153px;
+    padding-top: 96px;
+    top: 50%;
+    left: 25%;
+    text-align: center;
+    color: #576EF2;
+    transform: translate(-50%, -50%);
+  }
+  body .wrapper .visualArea .humidityWrap .pptnWrap .pptnTitle {
+    font-size: 20px;
+  }
+  body .wrapper .visualArea .humidityWrap .pptnWrap .pptnValue {
+    margin-top: 15px;
+    font-size: 32px;
+  }
+  body .wrapper .visualArea .humidityWrap .rhWrap {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    color: #576EF2;
+    transform: translate(-50%, -50%);
+    width: 153px;
+    height: 153px;
+    background: url("../Imgs/VectorWater.png") no-repeat center;
+  }
+  body .wrapper .visualArea .humidityWrap .rhWrap .rhTitle {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+  }
+  body .wrapper .visualArea .humidityWrap .rhWrap .rhValue {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+  }
+  body .wrapper .visualArea .livingIndexWrap {
+    width: 100%;
+    position: relative;
+    clear: both;
+    float: left;
+    margin-top: 23px;
+    display: flex;
+    justify-content: space-between;
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea {
+    position: relative;
+    width: 30%;
+    height: 268px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea > dl {
+    position: absolute;
+    top: 77px;
+    left: 41px;
+    width: 80px;
+    height: 80px;
+    float: left;
+    text-align: center;
+    line-height: 78px;
+    border: 1px solid #576EF2;
+    border-radius: 10px;
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea > p {
+    position: absolute;
+    width: 225px;
+    top: 55%;
+    left: 60%;
+    transform: translateX(-50%);
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 800px) {
+  body {
+    min-width: 400px;
+    font-family: "SUITE Variable", sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  body .blind {
+    display: none;
+  }
+  body header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  body header h1 {
+    display: none;
+  }
+  body header .manageBtn {
+    position: relative;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    border: none;
+    background-color: #fff;
+    border-radius: 10px;
+    background: url("../Imgs/managementIcon.png") no-repeat center;
+    background-size: cover;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  body header .manageBtn:hover {
+    scale: 1.05;
+  }
+  body .wrapper .visualArea > section.datetimeArea {
+    font-size: 32px;
+  }
+  body .wrapper .visualArea > section.datetimeArea .dateArea .localArea {
+    position: relative;
+    display: block;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 10px 0 10px 26px;
+  }
+  body .wrapper .visualArea > section.datetimeArea .dateArea .localArea:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -26px;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    background: url("../Imgs/fluent_location-16-filled.png") no-repeat center;
+    background-size: cover;
+  }
+  body .wrapper .visualArea > section.weatherStatusArea {
+    position: relative;
+    font-size: 30px;
+    font-weight: 0;
+    padding: 25px;
+    height: 437px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea > section.weatherStatusArea > dl {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #C9D3F2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../Imgs/fluent_weather-sunny-48-regular.png") no-repeat center;
+  }
+  body .wrapper .visualArea > section.weatherStatusArea > dl .weatherCelWrap {
+    position: absolute;
+    bottom: -96px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  body .wrapper .visualArea > section.weatherStatusArea > dl .weatherCelWrap .weatherCelArea {
+    font-size: 96px;
+  }
+  body .wrapper .visualArea > section.dustArea {
+    position: relative;
+    border-radius: 10px;
+    margin-top: 40px;
+    height: 437px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea > section.dustArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea > section.dustArea > div {
+    float: left;
+    width: 200px;
+    height: 286px;
+  }
+  body .wrapper .visualArea > section.dustArea > div.fineDustArea {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+  }
+  body .wrapper .visualArea > section.dustArea > div.ultraFineDustArea {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+  }
+  body .wrapper .visualArea > section.dustArea > div > dl {
+    margin-top: 100px;
+    text-align: center;
+  }
+  body .wrapper .visualArea .windWrap {
+    display: flex;
+    margin-top: 40px;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea {
+    position: relative;
+    width: calc(50% - 13px);
+    height: 246px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+    margin-right: 26px;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea .windDirImg {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../Imgs/fluent-mdl2_wind-direction.png") no-repeat center;
+  }
+  body .wrapper .visualArea .windWrap > section.windDirArea > dl {
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea {
+    position: relative;
+    width: calc(50% - 13px);
+    height: 246px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea .windSpeedImg {
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../Imgs/material-symbols-light_mode-fan-outline.png") no-repeat center;
+  }
+  body .wrapper .visualArea .windWrap > section.windSpeedArea > dl {
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+  }
+  body .wrapper .visualArea .humidityWrap {
+    position: relative;
+    height: 450px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea .humidityWrap > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .humidityWrap .pptnWrap {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    color: #576EF2;
+    transform: translate(-50%, -50%);
+    width: 153px;
+    height: 153px;
+  }
+  body .wrapper .visualArea .humidityWrap .pptnWrap .pptnTitle {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+  }
+  body .wrapper .visualArea .humidityWrap .pptnWrap .pptnValue {
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+  }
+  body .wrapper .visualArea .humidityWrap .rhWrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #576EF2;
+    transform: translate(-50%, -50%);
+    width: 153px;
+    height: 153px;
+    background: url("../Imgs/VectorWater.png") no-repeat center;
+  }
+  body .wrapper .visualArea .humidityWrap .rhWrap .rhTitle {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+  }
+  body .wrapper .visualArea .humidityWrap .rhWrap .rhValue {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+  }
+  body .wrapper .visualArea .livingIndexWrap {
+    margin-top: 40px;
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea {
+    margin-top: 16px;
+    position: relative;
+    height: 388px;
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(125, 144, 255, 0.3);
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea > h3 {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea > dl {
+    position: absolute;
+    top: 77px;
+    left: 41px;
+    width: 80px;
+    height: 80px;
+    float: left;
+    text-align: center;
+    line-height: 78px;
+    border: 1px solid #576EF2;
+    border-radius: 10px;
+  }
+  body .wrapper .visualArea .livingIndexWrap .visualArea > p {
+    position: absolute;
+    width: 225px;
+    top: 55%;
+    left: 60%;
+    transform: translateX(-50%);
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=main.css.map */

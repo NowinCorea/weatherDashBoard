@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>날씨 대시보드</title>
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE/fonts/variable/woff2/SUITE-Variable.css" rel="stylesheet">
+    <!--reset CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <!--design CSS -->
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/management.css">
+    <!--p5.js-->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <!--<link >-->
+  </head>
+  <body>
+    <header>
+      <h1 class="blind">날씨 대시보드</h1>
+      <button class="manageBtn" id="manageBtn">관리자페이지 토글버튼</button>
+    </header>
+    <div class="wrapper">
+      <main class="visualArea">
+        <h2 class="blind">데이터 시각화 화면</h2>
+        <section class="datetimeArea" id="datetimeArea">
+          <h3 class="blind">시간, 지역 정보</h3>
+          <p class="dateArea"><span class="yearArea" id="yearArea">2014</span>. <span class="monthArea" id="monthArea">2</span>. <span class="dayArea" id="dayArea">29</span>. <span class="timeArea" id="timeArea">오전 9시 </span><span class="localArea" id="localArea">경기도</span></p>
+        </section>
+        <section class="weatherStatusArea printArea">
+          <h3>현재 날씨</h3>
+          <dl>
+            <div class="weatherConditionWrap">
+              <dt class="blind">날씨 상태</dt>
+              <dd class="weatherConditionArea" id="weatherConditionArea">맑음</dd>
+            </div>
+            <div class="weatherCelWrap">
+              <dt class="blind">현재 기온</dt>
+              <dd class="weatherCelArea" id="weatherCelArea">12°C</dd>
+            </div>
+          </dl>
+        </section>
+        <section class="dustArea" id="dustDataArea">
+          <h3>미세먼지 수치</h3>
+          <div id="fineDustArea">
+            <dl>
+              <div id="DustGrape"></div>
+              <dt class="blind">항목</dt>
+              <dd class="fineDustArea">미세먼지</dd>
+              <dt class="blind">미세먼지 상태</dt>
+              <dd class="fineDustConditionArea" id="fineDustConditionArea">보통</dd>
+              <dt class="blind">미세먼지 수치</dt>
+              <dd class="fineDustValueArea"> <span id="fineDustValueArea">35</span>㎍/m3</dd>
+            </dl>
+          </div>
+          <div id="ultraFineDustArea">
+            <dl>
+              <div id="ultraDustGrape"></div>
+              <dt class="blind">항목</dt>
+              <dd class="ultraDustArea">초미세먼지</dd>
+              <dt class="blind">초미세먼지 상태</dt>
+              <dd class="ultraDustConditionArea" id="ultraDustConditionArea">좋음</dd>
+              <dt class="blind">초미세먼지 수치</dt>
+              <dd class="ultraDustValueArea"> <span>5</span>㎍/m3</dd>
+            </dl>
+          </div>
+        </section>
+        <div class="windWrap">
+          <section class="windDirArea">
+            <h3>풍향</h3>
+            <div class="windDirImg" id="windDirImg"></div>
+            <dl> 
+              <dt class="blind">방향</dt>
+              <dd id="windDirValueArea">남동풍</dd>
+            </dl>
+          </section>
+          <section class="windSpeedArea">
+            <h3>풍속</h3>
+            <div class="windSpeedImg" id="windSpeedImg"></div>
+            <dl> 
+              <dt class="blind">속도</dt>
+              <dd class="windSpeedValue"> <span id="windSpeedValueArea">12.1</span>KM/S</dd>
+            </dl>
+          </section>
+        </div>
+        <section class="humidityWrap" id="humidityArea">
+          <h3>강수량 / 습도</h3>
+          <dl>
+            <div class="pptnWrap">
+              <dt class="pptnTitle">강수량</dt>
+              <dd class="pptnValue"><span id="pptnValueArea">15</span>%</dd>
+            </div>
+            <div class="rhWrap">
+              <dt class="rhTitle">습도</dt>
+              <dd class="rhValue"><span id="rhValueA">20</span>%</dd>
+            </div>
+          </dl>
+        </section>
+        <div class="livingIndexWrap">
+          <section class="visualArea livingIndexBox" id="printLivingArea1">
+            <h3>세차지수</h3>
+            <dl>
+              <dt class="blind">세차지수 수치</dt>
+              <dd class="livingIndex1Value" id="livingIndex1Area"> </dd>
+            </dl>
+            <p class="livingIndexMsg" id="livingIndex1MsgArea">세차하기에 가장 적합한 날씨!</p>
+          </section>
+          <section class="visualArea" id="printLivingArea2">
+            <h3>달리기지수</h3>
+            <dl>
+              <dt class="blind">달리기지수 수치</dt>
+              <dd class="livingIndex2Value" id="livingIndex2Area"> </dd>
+            </dl>
+            <p class="livingIndexMsg" id="livingIndex2MsgArea">적당한 운동이라면 OK!</p>
+          </section>
+          <section class="visualArea" id="printLivingArea3">
+            <h3>빨래지수</h3>
+            <dl>
+              <dt class="blind">빨래지수 수치</dt>
+              <dd class="livingIndex3Value" id="livingIndex3Area"> </dd>
+            </dl>
+            <p class="livingindexMsg" id="livingIndex3Msg">왠만하면 다음으로!</p>
+          </section>
+        </div>
+      </main>
+      <section class="manageArea" id="manageArea">
+        <h2 class="blind">관리자 화면</h2>
+        <section class="dateControlArea manageSec">
+          <h3>날짜</h3>
+          <input id="inputDateBox" type="date" name="dateData">
+        </section>
+        <section class="hourControlArea manageSec">
+          <h3>시간</h3>
+          <!--make range -->
+          <div class="rangeContainer">
+            <div class="range">
+              <div class="range__content">
+                <div class="range__slider">
+                  <div class="range__slider-line" id="range-line"></div>
+                </div>
+                <div class="range__thumb" id="range-thumb">
+                  <div class="range__value"><span class="range__value-number" id="range-number"></span></div>
+                </div>
+                <input class="range__input" id="range-input" type="range" name="hourData" step="3" min="0" max="21" value="12">
+              </div>
+            </div>
+          </div>
+          <!--input#inputHourBar(type="range" name="hourData" step="3" min="0" max="23")-->
+          <div class="displayHourBox">
+            <!--span#displayHour 1|시-->
+          </div>
+        </section>
+        <section class="localControlArea manageSec">
+          <h3>지역</h3>
+          <div class="selectBoxList">
+            <!-- selectBox2-->
+            <div class="box">
+              <div class="selectBox2">
+                <button class="label">지역선택</button>
+                <ul class="optionList" id="optionList">
+                  <li class="optionItem">경기도</li>
+                  <li class="optionItem">충청도 </li>
+                  <li class="optionItem">전라도 </li>
+                  <li class="optionItem">경상도</li>
+                  <li class="optionItem">강원도</li>
+                  <li class="optionItem">제주도 </li>
+                  <li class="optionItem">울릉도 </li>
+                  <li class="optionItem">독도</li>
+                </ul>
+              </div>
+            </div>
+            <!-- selectBox3-->
+          </div>
+          <select id="inputLocalBox" name="localArea">
+            <option value="경기도">경기도</option>
+            <option value="충청도">충청도</option>
+            <option value="전라도">전라도</option>
+            <option value="경상도">경상도</option>
+            <option value="강원도">강원도</option>
+            <option value="제주도">제주도</option>
+            <option value="울릉도">울릉도</option>
+            <option value="독도">독도</option>
+          </select>
+        </section>
+        <section class="dataControlArea manageSec" id="dataControlArea">
+          <div class="controlWrap">
+            <label id="inputCelesiusBoxArea" for="celsiusData"> <span>온도</span>
+              <input id="inputCelsiusBox" type="number" name="celsiusData" value="0">
+            </label>
+            <label id="inputweatherConditionBoxArea"> <span>날씨</span>
+              <select id="inputweatherConditionBox" name="weatherCondition">
+                <option value="맑음">맑음</option>
+                <option value="흐림">흐림</option>
+                <option value="비">비</option>
+                <option value="눈">눈</option>
+                <option value="눈비">눈비</option>
+                <option value="강풍">강풍</option>
+                <option value="천둥">천둥</option>
+              </select>
+            </label>
+            <label id="inputfineDustBoxArea" for="fineDustData"> <span>미세먼지</span>
+              <input id="inputFineDustBox" type="number" name="fineDustData" value="0">
+            </label>
+            <label id="inputUltraDustBoxArea"> <span>초미세먼지</span>
+              <input id="inputUltraDustBox" type="number" value="0">
+            </label>
+            <label id="inputWindDirBoxArea"> <span>풍향</span>
+              <select id="inputWindDirBox" name="windDirData">
+                <option value="북">북</option>
+                <option value="북북동">북북동</option>
+                <option value="북동">북동</option>
+                <option value="동북동">동북동</option>
+                <option value="동">동</option>
+                <option value="동남동">동남동</option>
+                <option value="남동">남동</option>
+                <option value="남남동">남남동</option>
+                <option value="남">남</option>
+                <option value="남남서">남남서</option>
+                <option value="남서">남서</option>
+                <option value="서남서">서남서</option>
+                <option value="서">서</option>
+                <option value="서북서">서북서</option>
+                <option value="북서">북서</option>
+                <option value="북북서">북북서</option>
+              </select>
+            </label>
+            <label id="inputWindSpeedBoxArea"> <span>풍속</span>
+              <input id="inputWindSpeedBox" type="number" value="0">
+            </label>
+            <label id="inputPptnBoxArea"> <span>강수량</span>
+              <input id="inputPptnBox" type="number" value="0">
+            </label>
+            <label id="inputRHBoxArea"> <span>습도</span>
+              <input id="inputRHBox" type="number" value="0">
+            </label>
+          </div>
+        </section>
+        <section class="manageSec" id="livingIndexControlArea">
+          <h3>생활 지수</h3>
+          <div class="livingBtnWrap">
+            <label class="checkedBtn" id="washCarCheckBtn">세차
+              <input id="washCarCheckBox" type="checkBox" checked>
+            </label>
+            <label class="CheckedBtn" id="runningCheckBtn">달리기
+              <input id="runingCheckBox" type="checkBox" checked>
+            </label>
+            <label id="washingCheckBtn">빨래
+              <input id="washingCheckBox" type="checkBox" checked>
+            </label>
+            <label id="sleepCheckBtn">수면
+              <input id="sleepCheckBox" type="checkBox">
+            </label>
+            <label id="umbCheckBtn">우산
+              <input id="ubmCheckBox" type="checkBox">
+            </label>
+            <label id="sunCheckBtn">자외선
+              <input id="sunCheckBox" type="checkBox">
+            </label>
+            <label id="coldCheckBtn">감기
+              <input id="coldCheckBox" type="checkBox">
+            </label>
+            <label id="freezeCheckBtn">동파
+              <input id="freezeCheckBox" type="checkBox">
+            </label>
+          </div>
+          <div class="btnWrap">
+            <button class="resetBtn" id="resetBtn">초기화</button>
+            <button class="submitBtn" id="submitBtn">전송        </button>
+          </div>
+        </section>
+      </section>
+    </div>
+    <script src="../script/design.js"></script>
+    <script src="../script/manageElementClass.js"></script>
+    <script src="../script/p5.js"></script>
+  </body>
+</html>

@@ -1,0 +1,240 @@
+doctype html
+html(lang="ko")
+  head
+    meta(charset="utf-8")
+    title 날씨 대시보드
+    link(href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE/fonts/variable/woff2/SUITE-Variable.css" rel="stylesheet")
+
+    //reset CSS 
+    link(href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet")
+
+    //design CSS 
+    link(rel="stylesheet" href="../style/main.css") 
+    link(rel="stylesheet" href="../style/management.css") 
+
+    //p5.js
+    script(src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js")
+
+    //<link >
+  body
+    header
+      h1.blind 날씨 대시보드
+      button#manageBtn.manageBtn 
+    div.wrapper
+      main.visualArea
+        h2.blind 데이터 시각화 화면
+        section#datetimeArea.datetimeArea
+          h3.blind 시간, 지역 정보
+          p.dateArea
+            span#yearArea.yearArea 2014
+            |. 
+            span#monthArea.monthArea 2
+            |. 
+            span#dayArea.dayArea 29
+            |. 
+            span#timeArea.timeArea 오전 9시 
+            span#localArea.localArea 경기도
+        
+        section.weatherStatusArea.printArea
+          h3 현재 날씨
+          dl
+            div.weatherConditionWrap
+              dt.blind 날씨 상태
+              dd#weatherConditionArea.weatherConditionArea 
+            div.weatherCelWrap
+              dt.blind 현재 기온
+              dd#weatherCelArea.weatherCelArea 12°C
+        section#dustDataArea.dustArea
+          h3 미세먼지 수치
+          div#fineDustArea
+            dl
+              dt.blind 항목
+              dd.fineDustArea 미세먼지
+              dt.blind 미세먼지 상태
+              dd#fineDustConditionArea.fineDustConditionArea 보통
+              dt.blind 미세먼지 수치
+              dd.fineDustValueArea 
+                span#fineDustValueArea 35
+                | ㎍/m3
+          div#ultraFineDustArea
+            dl
+              dt.blind 항목
+              dd.ultraDustArea 초미세먼지
+              dt.blind 초미세먼지 상태
+              dd#ultraDustConditionArea.ultraDustConditionArea 좋음
+              dt.blind 초미세먼지 수치
+              dd.ultraDustValueArea 
+                span 5
+                | ㎍/m3
+
+        div.windWrap
+          section.windDirArea
+            h3 풍향
+            div#windDirImg.windDirImg
+            dl 
+              dt.blind 방향
+              dd#windDirValueArea 남동풍
+            
+          section.windSpeedArea
+            h3 풍속
+            div#windSpeedImg.windSpeedImg
+            dl 
+              dt.blind 속도
+              dd.windSpeedValue 
+                span#windSpeedValueArea 12.1
+                | KM/S
+        section#humidityArea.humidityWrap
+          h3 강수량 / 습도
+          dl
+            div.pptnWrap
+              dt.pptnTitle 강수량
+              dd.pptnValue
+                span#pptnValueArea 15
+                |%
+            div.rhWrap
+              dt.rhTitle 습도
+              dd.rhValue
+                span#rhValueA 20
+                | %
+        div.livingIndexWrap
+          section#printLivingArea1.visualArea.livingIndexBox
+            h3 세차지수
+            dl
+              dt.blind 세차지수 수치
+              dd#livingIndex1Area.livingIndex1Value 90
+            p#livingIndex1MsgArea.livingIndexMsg 세차하기에 가장 적합한 날씨!
+          section#printLivingArea2.visualArea
+            h3 달리기지수
+            dl
+              dt.blind 달리기지수 수치
+              dd#livingIndex2Area.livingIndex2Value 77.5
+            p#livingIndex2MsgArea.livingIndexMsg 적당한 운동이라면 OK!
+          section#printLivingArea3.visualArea
+            h3 빨래지수
+            dl
+              dt.blind 빨래지수 수치
+              dd#livingIndex3Area.livingIndex3Value 34
+            p#livingIndex3Msg.livingindexMsg 왠만하면 다음으로!
+
+      section#manageArea.manageArea
+        h2.blind 관리자 화면
+        section.dateControlArea.manageSec
+          h3 날짜
+          input#inputDateBox(type="date" name="dateData")
+        section.hourControlArea.manageSec
+          h3 시간
+          //make range 
+          div.rangeContainer
+            div.range
+              div.range__content
+                div.range__slider
+                  div.range__slider-line#range-line
+                div.range__thumb#range-thumb
+                  div.range__value#range__value
+                    span.range__value-number#range-number
+                input.range__input#range-input(type="range" name="hourData" step="3" min="0" max="21" value="12")
+          //input#inputHourBar(type="range" name="hourData" step="3" min="0" max="23")
+          div.displayHourBox
+            //span#displayHour 1|시
+            
+        section.localControlArea.manageSec
+          h3 지역
+          .selectBoxList
+            // selectBox2
+            .box
+              .selectBox2
+                button.label 지역선택
+                ul.optionList#optionList
+                  li.optionItem 경기도
+                  li.optionItem 충청도 
+                  li.optionItem 전라도 
+                  li.optionItem 경상도
+                  li.optionItem 강원도
+                  li.optionItem 제주도 
+                  li.optionItem 울릉도 
+                  li.optionItem 독도
+            // selectBox3
+            //- .box
+            //-   .selectBox3
+            //-     button.label Foods &#x1F35F;
+            //-     ul.optionList
+            //-       li.optionItem pizza
+            //-       li.optionItem ramen
+            //-       li.optionItem kimchi
+            //-       li.optionItem somori gukbob
+
+          select#inputLocalBox(name="localArea")
+            option(value="경기도") 경기도
+            option(value="충청도") 충청도
+            option(value="전라도") 전라도
+            option(value="경상도") 경상도
+            option(value="강원도") 강원도
+            option(value="제주도") 제주도
+            option(value="울릉도") 울릉도
+            option(value="독도") 독도
+
+        section.dataControlArea#dataControlArea.manageSec
+          div.controlWrap
+            label#celesiusDataBoxArea(for="celsiusData") 
+              //span 온도
+              //input#CelsiusBox(type="number" name="celsiusData" value="0")
+            label#weatherConditionBoxArea 
+              span 날씨
+              select#weatherConditionBox(name="weatherCondition")
+                option(value="맑음") 맑음
+                option(value="흐림") 흐림
+                option(value="비") 비
+                option(value="눈") 눈
+                option(value="눈비") 눈비
+                option(value="강풍") 강풍
+                option(value="천둥") 천둥
+            label#maximumTemperatureDataBoxArea(for="maximumTemperature")
+              span 최고기온
+              input#maximumTemperatureDataBox(type="number" name="maximumTemperatureData" value="0")
+            label#minimumTemperatureDataBoxArea(for="minimumTemperature")
+              span 최저기온
+              input#minimumTemperatureDataBox(type="number" name="minimumTemperatureData" value="0")
+            label#fineDustDataBoxArea(for="fineDustData") 
+              span 미세먼지
+              input#FineDustBox(type="number" name="fineDustData" value="0")
+            label#ultraFineDustDataBoxArea 
+              span 초미세먼지
+              input#UltraDustBox(type="number" value="0")
+            label#windDirectionDataBoxArea 
+              span 풍향
+              select#WindDirBox(name="windDirData")
+                option(value="북") 북
+                option(value="북북동") 북북동
+                option(value="북동") 북동
+                option(value="동북동") 동북동
+                option(value="동") 동
+                option(value="동남동") 동남동
+                option(value="남동") 남동
+                option(value="남남동") 남남동
+                option(value="남") 남
+                option(value="남남서") 남남서
+                option(value="남서") 남서
+                option(value="서남서") 서남서
+                option(value="서") 서
+                option(value="서북서") 서북서
+                option(value="북서") 북서
+                option(value="북북서") 북북서
+            label#windSpeedDataBoxArea 
+              span 풍속
+              input#WindSpeedBox(type="number" value="0")
+            label#precipitationDataBoxArea
+              span 강수량
+              input#PptnBox(type="number" value="0")
+            label#relativeHumidityDataBoxArea 
+              span 습도
+              input#inputRHBox(type="number" value="0")
+            label#co2ConcentrationDataBoxArea 
+              span 이산화탄소
+              input#co2ConcentrationDataBox(type="number" value="0")
+        
+        div.btnWrap
+          button#resetBtn.resetBtn 초기화
+          button#submitBtn.submitBtn 전송
+    script(src="../script/design.js")
+    script(src="../script/manageElementClass.js")
+    script(src="../script/p5.js")

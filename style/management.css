@@ -1,0 +1,1135 @@
+@charset "UTF-8";
+@media (min-width: 1200px) {
+  body {
+    font-family: "SUITE Variable", "맑은 고딕", sans-serif;
+    font-size: 16px;
+  }
+  input, select, option {
+    font-family: "SUITE Variable", "맑은 고딕", sans-serif;
+    color: #576EF2;
+  }
+  .blind {
+    display: none;
+  }
+  .manageArea {
+    width: 40%;
+    margin-left: 60px;
+    padding: 80px 20px 0;
+    background-color: #fff;
+    transform: translateX(0);
+  }
+  .manageArea > section h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .manageArea > section .rangeContainer {
+    position: relative;
+    height: 100px;
+    place-items: center;
+    display: grid;
+  }
+  .manageArea > section .rangeContainer .range {
+    width: 100%;
+    background-color: #C9D3F2;
+    border-radius: 4rem;
+    display: grid;
+    box-shadow: 0 6px 16px hsla(256, 72%, 24%, 0.15);
+  }
+  .manageArea > section .rangeContainer .range__content {
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .manageArea > section .rangeContainer .range__slider {
+    position: relative;
+    width: 100%;
+    height: 16px;
+    border-radius: 4rem;
+    box-shadow: 0 4px 12px hsla(256, 72%, 24%, 0.2);
+    overflow: hidden;
+  }
+  .manageArea > section .rangeContainer .range__slider-line {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(201, 211, 242) 0%, rgb(87, 110, 242) 100%);
+    width: 0;
+  }
+  .manageArea > section .rangeContainer .range__thumb {
+    width: 32px;
+    height: 32px;
+    background-color: #576EF2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px hsla(256, 72%, 24%, 0.2);
+    position: absolute;
+  }
+  .manageArea > section .rangeContainer .range__value {
+    width: 50px;
+    height: 50px;
+    background: #576EF2;
+    position: absolute;
+    top: -62px;
+    left: -10px;
+    border-radius: 2rem 2rem 2rem 0.25rem;
+    transform: rotate(-45deg);
+    display: grid;
+    place-items: center;
+  }
+  .manageArea > section .rangeContainer .range__value-number {
+    transform: rotate(45deg);
+    color: #fff;
+    font-size: 24px;
+  }
+  .manageArea > section .rangeContainer .range__input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    bottom: 0;
+    background-color: coral;
+    opacity: 0;
+  }
+  .manageArea > section .rangeContainer .range__input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+            appearance: none;
+    width: 32px;
+    height: 32px;
+  }
+  .manageArea > section .rangeContainer .range__input::-webkit-slider-thumb:hover {
+    cursor: pointer;
+  }
+  .manageArea > section > input[type=date] {
+    border: 1px solid #576EF2;
+    height: 45px;
+    border-radius: 15px;
+    width: calc(100% - 20px);
+    font-size: 20px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+  .manageArea > section > input[type=date]:focus {
+    outline: none;
+  }
+  .manageArea > section > input[type=range] {
+    background: linear-gradient(to right, #C9D3F2 0%, #C9D3F2 50%, #ececec 50%, #ececec 100%);
+    border-radius: 8px;
+    outline: none;
+    accent-color: #576EF2;
+  }
+  .manageArea > section > input[type=range]:focus {
+    outline: none;
+  }
+  .manageArea > section .selectBoxList {
+    margin-bottom: 112px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 {
+    position: absolute;
+    z-index: 1;
+    width: calc(100% - 40px);
+    height: 52px;
+    border-radius: 4px;
+    border: 2px solid #576EF2;
+    /* background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 7px) center no-repeat; */
+    background-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  .manageArea > section .selectBoxList .selectBox2* {
+    box-sizing: border-box;
+  }
+  .manageArea > section .selectBoxList .selectBox2:before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background: url("../Imgs/select-arrow.png") no-repeat center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    pointer-events: none;
+  }
+  .manageArea > section .selectBoxList .selectBox2.active {
+    z-index: 10;
+  }
+  .manageArea > section .selectBoxList .selectBox2.active .optionList {
+    max-height: 500px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    background: #fff;
+    list-style-type: none;
+    padding: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.1s ease-in;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar {
+    width: 6px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar-thumb {
+    background: #303030;
+    border-radius: 45px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar-thumb:hover {
+    background: #303030;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList .optionItem {
+    color: #576EF2;
+    border-bottom: 1px dashed #C9D3F2;
+    padding: 5px 15px 5px;
+    font-size: 20px;
+    transition: 0.1s;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList .optionItem:hover {
+    background: #576EF2;
+    color: #fff;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList .optionItem:last-child {
+    border-bottom: 0 none;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList.addBoard {
+    width: calc(100% - 10px);
+    margin: 0 5px;
+    border: 1px solid #576EF2;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .label {
+    font-size: 20px;
+    color: #576EF2;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    border: 0 none;
+    outline: 0 none;
+    padding-left: 15px;
+    background: transparent;
+    cursor: pointer;
+  }
+  .manageArea > section > select {
+    display: none;
+    width: 100%;
+    border: 2px solid #576EF2;
+    background-color: #fff;
+    height: 52px;
+    border-radius: 15px;
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+  .manageArea > section > select:focus {
+    outline: none;
+  }
+  .manageArea > section > select > option {
+    border: none;
+    height: 52px;
+    font-size: 20px;
+  }
+  .manageArea .dataControlArea .controlWrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .manageArea .dataControlArea .controlWrap > label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 14px 8px;
+    width: calc(50% - 18px);
+    font-size: 20px;
+  }
+  .manageArea .dataControlArea .controlWrap > label > input {
+    width: 40%;
+    text-align: center;
+    height: 36px;
+    border: 2px solid #576EF2;
+    border-radius: 10px;
+    float: right;
+    font-size: 20px;
+  }
+  .manageArea .dataControlArea .controlWrap > label > input:focus {
+    outline: none;
+  }
+  .manageArea .dataControlArea .controlWrap > label > select {
+    font-size: 20px;
+    width: calc(40% + 8px);
+    height: 41px;
+    border: 2px solid #576EF2;
+    border-radius: 10px;
+    float: right;
+  }
+  .manageArea .dataControlArea .controlWrap > label > select:focus {
+    outline: none;
+  }
+  .manageArea .controlText {
+    font-size: 20px;
+  }
+  .manageArea .inputDateBox, .manageArea .inputLocalBox {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0px;
+    padding-left: 15px;
+    border: 2px solid #576EF2;
+    border-radius: 15px;
+    font-size: 24px;
+  }
+  .manageArea input[type=date]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+  }
+  .manageArea .dataControlWrap {
+    margin: 60px 0;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .manageArea .dataControlWrap label {
+    flex-basis: 50%;
+    font-size: 20px;
+  }
+  .manageArea .dataControlWrap label input, .manageArea .dataControlWrap label select {
+    padding: 10px 0px;
+    padding-left: 15px;
+    border: 2px solid #576EF2;
+    border-radius: 10px;
+    float: right;
+  }
+  .manageArea input[type=range] {
+    width: 100%;
+    accent-color: #C9D3F2;
+  }
+  .manageArea input[type=checkbox] {
+    display: none;
+  }
+  .manageArea .livingBtnWrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -moz-column-gap: 12px;
+         column-gap: 12px;
+    row-gap: 15px;
+    margin-bottom: 63px;
+  }
+  .manageArea .livingBtnWrap label {
+    padding: 8px;
+    border: 2px solid #576EF2;
+    text-align: center;
+    border-radius: 50px;
+    color: #576EF2;
+    transition: all 0.3s;
+  }
+  .manageArea .livingBtnWrap label:hover {
+    background-color: #576EF2;
+    color: #f2f2f2;
+  }
+  .manageArea .livingBtnWrap label:focus {
+    background-color: #f2f2f2;
+    color: #576EF2;
+  }
+  .manageArea .btnWrap {
+    margin-bottom: 32px;
+    text-align: right;
+    cursor: pointer;
+  }
+  .manageArea .btnWrap button {
+    min-width: 128px;
+    max-width: 150px;
+    height: 50px;
+    border-radius: 56px;
+    color: #576EF2;
+    border: 2px solid #576EF2;
+    font-size: 24px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .manageArea .btnWrap button.resetBtn {
+    background-color: #fff;
+    color: #576EF2;
+    margin-right: 19px;
+  }
+  .manageArea .btnWrap button.resetBtn:hover {
+    background-color: #576EF2;
+    color: #fff;
+  }
+  .manageArea .btnWrap button.submitBtn {
+    background-color: #576EF2;
+    color: #fff;
+  }
+  .manageArea .btnWrap button.submitBtn:hover {
+    background-color: #576EF2;
+    color: #C9D3F2;
+  }
+}
+@media (min-width: 800px) and (max-width: 1200px) {
+  body {
+    font-family: "SUITE Variable", "맑은 고딕", sans-serif;
+    font-size: 16px;
+  }
+  input, select, option {
+    font-family: "SUITE Variable", "맑은 고딕", sans-serif;
+    color: #576EF2;
+  }
+  .blind {
+    display: none;
+  }
+  .manageArea {
+    width: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 80px 20px 0;
+    background-color: #fff;
+    transform: translateX(0);
+  }
+  .manageArea.manageToggle {
+    transform: translateX(200%);
+    transition: all 0.3s;
+  }
+  .manageArea > section h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .manageArea > section .rangeContainer {
+    position: relative;
+    height: 100px;
+    place-items: center;
+    display: grid;
+  }
+  .manageArea > section .rangeContainer .range {
+    width: 100%;
+    background-color: #C9D3F2;
+    border-radius: 4rem;
+    display: grid;
+    box-shadow: 0 6px 16px hsla(256, 72%, 24%, 0.15);
+  }
+  .manageArea > section .rangeContainer .range__content {
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .manageArea > section .rangeContainer .range__slider {
+    position: relative;
+    width: 100%;
+    height: 16px;
+    border-radius: 4rem;
+    box-shadow: 0 4px 12px hsla(256, 72%, 24%, 0.2);
+    overflow: hidden;
+  }
+  .manageArea > section .rangeContainer .range__slider-line {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(201, 211, 242) 0%, rgb(87, 110, 242) 100%);
+    width: 0;
+  }
+  .manageArea > section .rangeContainer .range__thumb {
+    width: 32px;
+    height: 32px;
+    background-color: #576EF2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px hsla(256, 72%, 24%, 0.2);
+    position: absolute;
+  }
+  .manageArea > section .rangeContainer .range__value {
+    width: 50px;
+    height: 50px;
+    background: #576EF2;
+    position: absolute;
+    top: -62px;
+    left: -10px;
+    border-radius: 2rem 2rem 2rem 0.25rem;
+    transform: rotate(-45deg);
+    display: grid;
+    place-items: center;
+  }
+  .manageArea > section .rangeContainer .range__value-number {
+    transform: rotate(45deg);
+    color: #fff;
+    font-size: 24px;
+  }
+  .manageArea > section .rangeContainer .range__input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    bottom: 0;
+    background-color: coral;
+    opacity: 0;
+  }
+  .manageArea > section .rangeContainer .range__input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+            appearance: none;
+    width: 32px;
+    height: 32px;
+  }
+  .manageArea > section .rangeContainer .range__input::-webkit-slider-thumb:hover {
+    cursor: pointer;
+  }
+  .manageArea > section > input[type=date] {
+    border: 1px solid #576EF2;
+    height: 45px;
+    border-radius: 15px;
+    width: calc(100% - 20px);
+    font-size: 20px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+  .manageArea > section > input[type=date]:focus {
+    outline: none;
+  }
+  .manageArea > section > input[type=range] {
+    background: linear-gradient(to right, #C9D3F2 0%, #C9D3F2 50%, #ececec 50%, #ececec 100%);
+    border-radius: 8px;
+    outline: none;
+    accent-color: #576EF2;
+  }
+  .manageArea > section > input[type=range]:focus {
+    outline: none;
+  }
+  .manageArea > section .selectBoxList {
+    margin-bottom: 112px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 {
+    position: absolute;
+    z-index: 1;
+    width: calc(100% - 40px);
+    height: 52px;
+    border-radius: 4px;
+    border: 2px solid #576EF2;
+    /* background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 7px) center no-repeat; */
+    background-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  .manageArea > section .selectBoxList .selectBox2* {
+    box-sizing: border-box;
+  }
+  .manageArea > section .selectBoxList .selectBox2:before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background: url("../Imgs/select-arrow.png") no-repeat center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    pointer-events: none;
+  }
+  .manageArea > section .selectBoxList .selectBox2.active {
+    z-index: 10;
+  }
+  .manageArea > section .selectBoxList .selectBox2.active .optionList {
+    max-height: 500px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    background: #fff;
+    list-style-type: none;
+    padding: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.1s ease-in;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar {
+    width: 6px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar-thumb {
+    background: #303030;
+    border-radius: 45px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar-thumb:hover {
+    background: #303030;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList .optionItem {
+    color: #576EF2;
+    border-bottom: 1px dashed #C9D3F2;
+    padding: 5px 15px 5px;
+    font-size: 20px;
+    transition: 0.1s;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList .optionItem:hover {
+    background: #576EF2;
+    color: #fff;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList .optionItem:last-child {
+    border-bottom: 0 none;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList.addBoard {
+    width: calc(100% - 10px);
+    margin: 0 5px;
+    border: 1px solid #576EF2;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .label {
+    font-size: 20px;
+    color: #576EF2;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    border: 0 none;
+    outline: 0 none;
+    padding-left: 15px;
+    background: transparent;
+    cursor: pointer;
+  }
+  .manageArea > section > select {
+    display: none;
+    width: 100%;
+    border: 2px solid #576EF2;
+    background-color: #fff;
+    height: 52px;
+    border-radius: 15px;
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+  .manageArea > section > select:focus {
+    outline: none;
+  }
+  .manageArea > section > select > option {
+    border: none;
+    height: 52px;
+    font-size: 20px;
+  }
+  .manageArea .dataControlArea .controlWrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .manageArea .dataControlArea .controlWrap > label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 14px 8px;
+    width: calc(50% - 18px);
+    font-size: 20px;
+  }
+  .manageArea .dataControlArea .controlWrap > label > input {
+    width: 40%;
+    text-align: center;
+    height: 36px;
+    border: 2px solid #576EF2;
+    border-radius: 10px;
+    float: right;
+    font-size: 20px;
+  }
+  .manageArea .dataControlArea .controlWrap > label > input:focus {
+    outline: none;
+  }
+  .manageArea .dataControlArea .controlWrap > label > select {
+    font-size: 20px;
+    width: calc(40% + 8px);
+    height: 41px;
+    border: 2px solid #576EF2;
+    border-radius: 10px;
+    float: right;
+  }
+  .manageArea .dataControlArea .controlWrap > label > select:focus {
+    outline: none;
+  }
+  .manageArea .controlText {
+    font-size: 20px;
+  }
+  .manageArea .inputDateBox, .manageArea .inputLocalBox {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0px;
+    padding-left: 15px;
+    border: 2px solid #576EF2;
+    border-radius: 15px;
+    font-size: 24px;
+  }
+  .manageArea input[type=date]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+  }
+  .manageArea .dataControlWrap {
+    margin: 60px 0;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .manageArea .dataControlWrap label {
+    flex-basis: 50%;
+    font-size: 20px;
+  }
+  .manageArea .dataControlWrap label input, .manageArea .dataControlWrap label select {
+    padding: 10px 0px;
+    padding-left: 15px;
+    border: 2px solid #576EF2;
+    border-radius: 10px;
+    float: right;
+  }
+  .manageArea input[type=range] {
+    width: 100%;
+    accent-color: #C9D3F2;
+  }
+  .manageArea input[type=checkbox] {
+    display: none;
+  }
+  .manageArea .livingBtnWrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -moz-column-gap: 12px;
+         column-gap: 12px;
+    row-gap: 15px;
+    margin-bottom: 63px;
+  }
+  .manageArea .livingBtnWrap label {
+    padding: 8px;
+    border: 2px solid #576EF2;
+    text-align: center;
+    border-radius: 50px;
+    color: #576EF2;
+    transition: all 0.3s;
+  }
+  .manageArea .livingBtnWrap label:hover {
+    background-color: #576EF2;
+    color: #f2f2f2;
+  }
+  .manageArea .livingBtnWrap label:focus {
+    background-color: #f2f2f2;
+    color: #576EF2;
+  }
+  .manageArea .btnWrap {
+    margin-bottom: 32px;
+    text-align: right;
+    cursor: pointer;
+  }
+  .manageArea .btnWrap button {
+    min-width: 128px;
+    max-width: 150px;
+    height: 50px;
+    border-radius: 56px;
+    color: #576EF2;
+    border: 2px solid #576EF2;
+    font-size: 24px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .manageArea .btnWrap button.resetBtn {
+    background-color: #fff;
+    color: #576EF2;
+    margin-right: 19px;
+  }
+  .manageArea .btnWrap button.resetBtn:hover {
+    background-color: #576EF2;
+    color: #fff;
+  }
+  .manageArea .btnWrap button.submitBtn {
+    background-color: #576EF2;
+    color: #fff;
+  }
+  .manageArea .btnWrap button.submitBtn:hover {
+    background-color: #576EF2;
+    color: #C9D3F2;
+  }
+}
+@media screen and (max-width: 799.99px) {
+  body {
+    font-family: "SUITE Variable", "맑은 고딕", sans-serif;
+    font-size: 16px;
+  }
+  input, select, option {
+    font-family: "SUITE Variable", "맑은 고딕", sans-serif;
+    color: #576EF2;
+  }
+  .blind {
+    display: none;
+  }
+  .manageArea {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 400px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 80px 20px 0;
+    background-color: #fff;
+    transform: translateX(0);
+  }
+  .manageArea.manageToggle {
+    transform: translateX(200%);
+    transition: all 0.3s;
+  }
+  .manageArea > section h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .manageArea > section .rangeContainer {
+    position: relative;
+    height: 100px;
+    place-items: center;
+    display: grid;
+  }
+  .manageArea > section .rangeContainer .range {
+    width: 100%;
+    background-color: #C9D3F2;
+    border-radius: 4rem;
+    display: grid;
+    box-shadow: 0 6px 16px hsla(256, 72%, 24%, 0.15);
+  }
+  .manageArea > section .rangeContainer .range__content {
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .manageArea > section .rangeContainer .range__slider {
+    position: relative;
+    width: 100%;
+    height: 16px;
+    border-radius: 4rem;
+    box-shadow: 0 4px 12px hsla(256, 72%, 24%, 0.2);
+    overflow: hidden;
+  }
+  .manageArea > section .rangeContainer .range__slider-line {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(201, 211, 242) 0%, rgb(87, 110, 242) 100%);
+    width: 0;
+  }
+  .manageArea > section .rangeContainer .range__thumb {
+    width: 32px;
+    height: 32px;
+    background-color: #576EF2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px hsla(256, 72%, 24%, 0.2);
+    position: absolute;
+  }
+  .manageArea > section .rangeContainer .range__value {
+    width: 50px;
+    height: 50px;
+    background: #576EF2;
+    position: absolute;
+    top: -62px;
+    left: -10px;
+    border-radius: 2rem 2rem 2rem 0.25rem;
+    transform: rotate(-45deg);
+    display: grid;
+    place-items: center;
+  }
+  .manageArea > section .rangeContainer .range__value-number {
+    transform: rotate(45deg);
+    color: #fff;
+    font-size: 24px;
+  }
+  .manageArea > section .rangeContainer .range__input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    bottom: 0;
+    background-color: coral;
+    opacity: 0;
+  }
+  .manageArea > section .rangeContainer .range__input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+            appearance: none;
+    width: 32px;
+    height: 32px;
+  }
+  .manageArea > section .rangeContainer .range__input::-webkit-slider-thumb:hover {
+    cursor: pointer;
+  }
+  .manageArea > section > input[type=date] {
+    border: 1px solid #576EF2;
+    height: 45px;
+    border-radius: 15px;
+    width: calc(100% - 20px);
+    font-size: 20px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+  .manageArea > section > input[type=date]:focus {
+    outline: none;
+  }
+  .manageArea > section > input[type=range] {
+    background: linear-gradient(to right, #C9D3F2 0%, #C9D3F2 50%, #ececec 50%, #ececec 100%);
+    border-radius: 8px;
+    outline: none;
+    accent-color: #576EF2;
+  }
+  .manageArea > section > input[type=range]:focus {
+    outline: none;
+  }
+  .manageArea > section .selectBoxList {
+    margin-bottom: 112px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 {
+    position: absolute;
+    z-index: 1;
+    width: calc(100% - 40px);
+    height: 52px;
+    border-radius: 4px;
+    border: 2px solid #576EF2;
+    /* background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 7px) center no-repeat; */
+    background-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  .manageArea > section .selectBoxList .selectBox2* {
+    box-sizing: border-box;
+  }
+  .manageArea > section .selectBoxList .selectBox2:before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background: url("../Imgs/select-arrow.png") no-repeat center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    pointer-events: none;
+  }
+  .manageArea > section .selectBoxList .selectBox2.active {
+    z-index: 10;
+  }
+  .manageArea > section .selectBoxList .selectBox2.active .optionList {
+    max-height: 500px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    background: #fff;
+    list-style-type: none;
+    padding: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.1s ease-in;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar {
+    width: 6px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar-thumb {
+    background: #303030;
+    border-radius: 45px;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList::-webkit-scrollbar-thumb:hover {
+    background: #303030;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList .optionItem {
+    color: #576EF2;
+    border-bottom: 1px dashed #C9D3F2;
+    padding: 5px 15px 5px;
+    font-size: 20px;
+    transition: 0.1s;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList .optionItem:hover {
+    background: #576EF2;
+    color: #fff;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList .optionItem:last-child {
+    border-bottom: 0 none;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .optionList.addBoard {
+    width: calc(100% - 10px);
+    margin: 0 5px;
+    border: 1px solid #576EF2;
+  }
+  .manageArea > section .selectBoxList .selectBox2 .label {
+    font-size: 20px;
+    color: #576EF2;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    border: 0 none;
+    outline: 0 none;
+    padding-left: 15px;
+    background: transparent;
+    cursor: pointer;
+  }
+  .manageArea > section > select {
+    display: none;
+    width: 100%;
+    border: 2px solid #576EF2;
+    background-color: #fff;
+    height: 52px;
+    border-radius: 15px;
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+  .manageArea > section > select:focus {
+    outline: none;
+  }
+  .manageArea > section > select > option {
+    border: none;
+    height: 52px;
+    font-size: 20px;
+  }
+  .manageArea .dataControlArea .controlWrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .manageArea .dataControlArea .controlWrap > label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 14px 8px;
+    width: calc(50% - 18px);
+    font-size: 20px;
+  }
+  .manageArea .dataControlArea .controlWrap > label > input {
+    width: 40%;
+    text-align: center;
+    height: 36px;
+    border: 2px solid #576EF2;
+    border-radius: 10px;
+    float: right;
+    font-size: 20px;
+  }
+  .manageArea .dataControlArea .controlWrap > label > input:focus {
+    outline: none;
+  }
+  .manageArea .dataControlArea .controlWrap > label > select {
+    font-size: 20px;
+    width: calc(40% + 8px);
+    height: 41px;
+    border: 2px solid #576EF2;
+    border-radius: 10px;
+    float: right;
+  }
+  .manageArea .dataControlArea .controlWrap > label > select:focus {
+    outline: none;
+  }
+  .manageArea .controlText {
+    font-size: 20px;
+  }
+  .manageArea .inputDateBox, .manageArea .inputLocalBox {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0px;
+    padding-left: 15px;
+    border: 2px solid #576EF2;
+    border-radius: 15px;
+    font-size: 24px;
+  }
+  .manageArea input[type=date]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+  }
+  .manageArea .dataControlWrap {
+    margin: 60px 0;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .manageArea .dataControlWrap label {
+    flex-basis: 50%;
+    font-size: 20px;
+  }
+  .manageArea .dataControlWrap label input, .manageArea .dataControlWrap label select {
+    padding: 10px 0px;
+    padding-left: 15px;
+    border: 2px solid #576EF2;
+    border-radius: 10px;
+    float: right;
+  }
+  .manageArea input[type=range] {
+    width: 100%;
+    accent-color: #C9D3F2;
+  }
+  .manageArea input[type=checkbox] {
+    display: none;
+  }
+  .manageArea .livingBtnWrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -moz-column-gap: 12px;
+         column-gap: 12px;
+    row-gap: 15px;
+    margin-bottom: 63px;
+  }
+  .manageArea .livingBtnWrap label {
+    padding: 8px;
+    border: 2px solid #576EF2;
+    text-align: center;
+    border-radius: 50px;
+    color: #576EF2;
+    transition: all 0.3s;
+  }
+  .manageArea .livingBtnWrap label:hover {
+    background-color: #576EF2;
+    color: #f2f2f2;
+  }
+  .manageArea .livingBtnWrap label:focus {
+    background-color: #f2f2f2;
+    color: #576EF2;
+  }
+  .manageArea .btnWrap {
+    margin-bottom: 32px;
+    text-align: right;
+    cursor: pointer;
+  }
+  .manageArea .btnWrap button {
+    min-width: 128px;
+    max-width: 150px;
+    height: 50px;
+    border-radius: 56px;
+    color: #576EF2;
+    border: 2px solid #576EF2;
+    font-size: 24px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .manageArea .btnWrap button.resetBtn {
+    background-color: #fff;
+    color: #576EF2;
+    margin-right: 19px;
+  }
+  .manageArea .btnWrap button.resetBtn:hover {
+    background-color: #576EF2;
+    color: #fff;
+  }
+  .manageArea .btnWrap button.submitBtn {
+    background-color: #576EF2;
+    color: #fff;
+  }
+  .manageArea .btnWrap button.submitBtn:hover {
+    background-color: #576EF2;
+    color: #C9D3F2;
+  }
+}/*# sourceMappingURL=management.css.map */
